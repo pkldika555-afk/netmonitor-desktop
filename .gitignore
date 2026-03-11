@@ -1,0 +1,32 @@
+# Node
+node_modules/
+dist/
+update-package/
+
+# Runtime binaries (gede banget, jangan di-push)
+runtime/
+
+# Laravel www — push kodenya tapi skip yang gak perlu
+www/node_modules/
+www/vendor/
+www/public/build/
+www/storage/logs/*.log
+www/storage/framework/cache/data/
+www/storage/framework/views/
+www/bootstrap/cache/*.php
+
+# Env
+www/.env
+.env
+
+# MySQL data
+runtime/mysql/data/
+
+# Electron build output
+dist/
+*.exe
+*.dmg
+
+# OS
+.DS_Store
+Thumbs.db

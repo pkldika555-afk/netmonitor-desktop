@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 400px; height: 300px;
+      background: transparent;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      -webkit-app-region: drag;
+    }
+    .card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 20px;
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 20px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+    }
+    .logo {
+      width: 64px; height: 64px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 800;
+      color: #000; letter-spacing: -0.5px;
+      font-family: monospace;
+    }
+    h1 { color: #f1f5f9; font-size: 20px; font-weight: 700; }
+    .status { color: #64748b; font-size: 12px; letter-spacing: 0.05em; }
+    .bar-wrap {
+      width: 200px; height: 3px;
+      background: #1e293b;
+      border-radius: 99px; overflow: hidden;
+    }
+    .bar {
+      height: 100%;
+      background: linear-gradient(90deg, #22c55e, #4ade80);
+      border-radius: 99px;
+      animation: load 2.5s ease-in-out infinite;
+    }
+    @keyframes load {
+      0%   { width: 0%;  margin-left: 0; }
+      50%  { width: 70%; margin-left: 15%; }
+      100% { width: 0%;  margin-left: 100%; }
+    }
+    .version { position: absolute; bottom: 16px; color: #334155; font-size: 10px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">NM</div>
+    <h1>NetMonitor</h1>
+    <div class="status" id="status">Memulai server...</div>
+    <div class="bar-wrap"><div class="bar"></div></div>
+    <span class="version">v1.0.0</span>
+  </div>
+  <script>
+    const messages = [
+      'Memulai database...',
+      'Menghubungkan server...',
+      'Memuat aplikasi...',
+      'Sebentar lagi...',
+    ];
+    let i = 0;
+    setInterval(() => {
+      document.getElementById('status').textContent = messages[i % messages.length];
+      i++;
+    }, 1200);
+  </script>
+</body>
+</html>
