@@ -18,20 +18,20 @@
       width: 100%; height: 100%;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      gap: 20px;
+      gap: 16px;
       box-shadow: 0 25px 60px rgba(0,0,0,0.5);
     }
-    .logo {
-      width: 64px; height: 64px;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      border-radius: 16px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; font-weight: 800;
-      color: #000; letter-spacing: -0.5px;
-      font-family: monospace;
+    h1 {
+      color: #f1f5f9;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
     }
-    h1 { color: #f1f5f9; font-size: 20px; font-weight: 700; }
-    .status { color: #64748b; font-size: 12px; letter-spacing: 0.05em; }
+    .status {
+      color: #64748b;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
     .bar-wrap {
       width: 200px; height: 3px;
       background: #1e293b;
@@ -48,17 +48,33 @@
       50%  { width: 70%; margin-left: 15%; }
       100% { width: 0%;  margin-left: 100%; }
     }
-    .version { position: absolute; bottom: 16px; color: #334155; font-size: 10px; }
+    .version {
+      position: absolute;
+      bottom: 16px;
+      color: #334155;
+      font-size: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="logo">NM</div>
+
+    <svg width="64" height="64" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="256" height="256" rx="60" fill="#030712"/>
+      <path d="M60 128H90L105 80L130 176L155 110L170 128H200"
+            stroke="#22C55E" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+        <animate attributeName="stroke-opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M128 50C90 50 70 70 70 70V140C70 180 128 210 128 210C128 210 186 180 186 140V70C186 70 166 50 128 50Z"
+            stroke="#22C55E" stroke-width="6" stroke-opacity="0.3" fill="none"/>
+    </svg>
+
     <h1>NetMonitor</h1>
     <div class="status" id="status">Memulai server...</div>
     <div class="bar-wrap"><div class="bar"></div></div>
     <span class="version">v1.0.0</span>
   </div>
+
   <script>
     const messages = [
       'Memulai database...',
