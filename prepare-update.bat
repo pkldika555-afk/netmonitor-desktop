@@ -1,8 +1,7 @@
 @echo off
 echo ============================================
-echo   PREPARE UPDATE - Sistem Komponen
+echo   PREPARE UPDATE - NetMonitor
 echo ============================================
-echo.
 
 if not exist "main.js" (
     echo [ERROR] Jalankan script ini dari folder electron-app!
@@ -65,26 +64,24 @@ echo       Copy selesai!
 echo.
 
 echo [5/5] Membuat ZIP...
-tar -a -c -f "update-package\Sistem-Komponen-Update.zip" -C "update-package" .
+tar -a -c -f "update-package\NetMonitor-Update.zip" -C "update-package" .
 if errorlevel 1 (
     echo [WARN] tar gagal, coba pakai PowerShell...
-    powershell -Command "Compress-Archive -Path 'update-package\*' -DestinationPath 'update-package\Sistem-Komponen-Update.zip' -Force"
+    powershell -Command "Compress-Archive -Path 'update-package\*' -DestinationPath 'update-package\NetMonitor-Update.zip' -Force"
     if errorlevel 1 (
         echo [WARN] ZIP gagal dibuat otomatis.
         echo        Zip manual folder update-package\ dan kirim ke klien.
     ) else (
         echo       ZIP berhasil via PowerShell!
-        echo       File: update-package\Sistem-Komponen-Update.zip
+        echo       File: update-package\NetMonitor-Update.zip
     )
 ) else (
     echo       ZIP berhasil dibuat!
-    echo       File: update-package\Sistem-Komponen-Update.zip
+    echo       File: update-package\NetMonitor-Update.zip
 )
 echo.
 
 echo ============================================
 echo   SELESAI! Kirim file ini ke klien:
-echo   update-package\Sistem-Komponen-Update.zip
+echo   update-package\NetMonitor-Update.zip
 echo ============================================
-echo.
-pause

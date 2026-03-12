@@ -1,10 +1,9 @@
 @echo off
 echo ============================================
-echo   UPDATE Sistem Komponen
+echo   UPDATE NetMonitor
 echo ============================================
 echo.
-
-set APP_DIR=C:\Users\%USERNAME%\AppData\Local\Programs\Sistem Komponen\resources
+set APP_DIR=C:\Users\%USERNAME%\AppData\Local\Programs\NetMonitor\resources
 set PHP=%APP_DIR%\runtime\php\php.exe
 set WWW=%APP_DIR%\www
 
